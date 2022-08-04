@@ -1,9 +1,9 @@
 package com.example.demo.service.impl;
 
 //import Mapper.UserMapper;
+import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.service.UserService;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
-import org.apache.catalina.User;
+
+import com.example.demo.entity.User;
 
 import java.util.List;
 

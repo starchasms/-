@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import com.example.demo.entity.books;
 import com.example.demo.service.impl.BookServicelmpl;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/books")
 public class BookController {
 
