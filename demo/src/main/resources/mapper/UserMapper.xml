@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper.UserMapper">
+    <insert id="user_id">
+        insert into users(user_id,user_name,sex,phone,email,state,administratir,password)
+        values('${user_id}','${user_name}','${sex}','${phone}','${email}','${state}','${administratir}','${password}')
+    </insert>
+    <update id="UserUpdate">
+        update users
+        set user_name = '${user_name}',sex = '${sex}',phone = '${phone}',email = '${email}',state = '${state}',
+               administratir = '${administratir}',password = '${password}'
+        where user_id = '${user_id}'
+    </update>
+    <select id="check" parameterType="entity.User" resultType="entity.User">
+        select * from users
+        where user_name = '${user_name}' and user_id = '${user_id}' and sex = '${sex}'
+    </select>
+</mapper>
