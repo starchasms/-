@@ -20,10 +20,10 @@ public class BookController {
     BookServicelmpl bookServicelmpl;
 
     @RequestMapping("/loogin")
-    public  String main(Model model){
+    public  List<books> main(Model model){
         List<books> list=bookServicelmpl.selectList();
         model.addAttribute("booklist",list);
-        return "login";
+        return list;
     }
 
     //   根据id 删除书籍
@@ -40,10 +40,10 @@ public class BookController {
     }
 
     @RequestMapping("selectbyisbn")
-    public  String selectbyisbn(Model model,String isbn){
+    public  List<books> selectbyisbn(Model model, String isbn){
         List<books> list=bookServicelmpl.selectbyisbn(isbn);
         model.addAttribute("booklist",list);
-        return "login";
+        return list;
     }
 
     @RequestMapping("/update")

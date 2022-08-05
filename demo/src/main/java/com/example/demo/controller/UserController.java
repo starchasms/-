@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
+
 @Controller
 @ResponseBody
 public class UserController {
@@ -70,9 +72,10 @@ public class UserController {
     }
 
     @RequestMapping("/users")
-    public String showUsers(ModelMap modelMap){
+    public List<User> showUsers(){
         List<User> userList = userService.queryAllUser();
-        modelMap.addAttribute("userList",userList);
-        return "users";
+
+
+        return userList;
     }
 }
