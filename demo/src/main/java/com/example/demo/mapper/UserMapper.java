@@ -2,9 +2,14 @@ package com.example.demo.mapper;
 
 import com.example.demo.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
+import static com.sun.webkit.dom.EventImpl.SELECT;
+import static org.springframework.http.HttpHeaders.FROM;
+
 @Repository
 @Mapper
 public interface UserMapper {

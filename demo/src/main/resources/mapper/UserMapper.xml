@@ -15,4 +15,7 @@
         select * from users
         where user_name = ${user_name} and user_id = ${user_id} and sex = ${sex}
     </select>
+    <select id="findAll" resultType="com.example.demo.entity.User">
+        select * from users;
+    </select>
 </mapper>

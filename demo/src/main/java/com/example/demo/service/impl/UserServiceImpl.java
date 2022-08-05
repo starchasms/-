@@ -7,6 +7,7 @@ import com.example.demo.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl extends UserService {
@@ -34,5 +35,10 @@ public class UserServiceImpl extends UserService {
     public int modifyUser(User user){
         int mFlag = userMapper.updateUser(user);
         return mFlag;
+    }
+    @Override
+    public List<User> queryAllUser() {
+
+        return userMapper.findAll();
     }
 }

@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 
 import com.example.demo.entity.User;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -26,7 +27,9 @@ public User queryUserByUserId(Integer userId) {
         return null;
     }
 //查询所有用户
+
 public List<User> queryAllUser() {
-        return null;
+
+    return null;
     }
 }
