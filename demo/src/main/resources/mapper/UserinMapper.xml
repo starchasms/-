@@ -5,15 +5,15 @@
 
 <mapper namespace="com.example.demo.mapper.UserinMapper">
     <select id="findAll" resultType="com.example.demo.entity.User">
-        select * from User
+        select * from users
     </select>
     <select id="findByName" resultType="com.example.demo.entity.Userin">
-        select * from User where username = #{username}
+        select * from users where user_name = #{username}
     </select>
     <select id="findPswByName" resultType="String">
-        select password from user where username = #{username}
+        select password from users where user_name = #{username}
     </select>
     <insert id="save">
-        insert into user(username,password) value (#{username},#{password})
+        insert into users(user_name,password) value (#{username},#{password})
     </insert>
 </mapper>

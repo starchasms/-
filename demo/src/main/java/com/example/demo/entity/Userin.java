@@ -4,7 +4,7 @@ public class Userin {
     private Integer user_id;
     private String user_name;
     private String sex;
-    private int phone;
+    private String phone;
     private String email;
     private String addtime;
     private String state;
@@ -35,11 +35,11 @@ public class Userin {
         this.sex = sex;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

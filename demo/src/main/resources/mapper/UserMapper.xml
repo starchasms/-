@@ -5,7 +5,7 @@
         insert into users(user_id,user_name,sex,phone,email,state,administratir,password)
         values(${user_id},${user_name},${sex},${phone},${email},${state},${administratir},${password})
     </insert>
-    <update id="UserUpdate">
+    <update id="updateUser">
         update users
         set user_name = ${user_name},sex = ${sex},phone = ${phone},email = ${email},state = ${state},
                administratir = ${administratir},password = ${password}
