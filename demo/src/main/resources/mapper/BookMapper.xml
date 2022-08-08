@@ -6,6 +6,11 @@
     </delete>
     <insert id="insert">
         insert into books(book_name,author,category,press,`sum`,sum_inw,isbn,price,preferential,book_url)
-        values(${bookName},${author},${category},${press},${sum},${sumInw},${isbn},${price},${price},${bookUrl})
+        values(#{bookName},#{author},#{category},#{press},${sum},${sumInw},${isbn},${price},${price},${bookUrl})
     </insert>
+    <update id="updateById">
+        update books
+        set book_name=#{bookName},author=#{author},category=#{category},press=#{press},`sum`=${sum},sum_inw=${sumInw},isbn=${isbn},price=${price},book_url=${bookUrl}
+        WHERE book_id=${bookId}
+    </update>
 </mapper>

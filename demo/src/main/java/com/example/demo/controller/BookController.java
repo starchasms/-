@@ -50,8 +50,8 @@ public class BookController {
     }
 
     @RequestMapping("/update")
-    public String update(@PathVariable("books") books books){
-        bookServicelmpl.update(books);
+    public String update(String bookId,String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl){
+        bookServicelmpl.update(bookId,bookName,author,category,press,sum,sumInw,isbn,price,bookUrl);
         return "login";
     }
 }

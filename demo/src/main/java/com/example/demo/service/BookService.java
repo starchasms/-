@@ -14,5 +14,5 @@ public interface BookService extends IService<books> {
 
     void deleteById(Integer id);
 
-    void update(books books);
+    void update(String bookId,String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl);
 }

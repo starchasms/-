@@ -12,7 +12,7 @@ public interface BookMapper extends BaseMapper<books> {
     int deleteById(Integer bookId);
 
     int insert(String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl);
-
+    int updateById(String bookId,String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl);
 
 }
 

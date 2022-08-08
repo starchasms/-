@@ -40,7 +40,7 @@ public class BookServicelmpl extends ServiceImpl<BookMapper,books> implements Bo
     }
 
     @Override
-    public void update(books books) {
-        bookMapper.updateById(books);
+    public void update(String bookId,String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl) {
+        bookMapper.updateById(bookId,bookName,author,category,press,sum,sumInw,isbn,price,bookUrl);
     }
 }
