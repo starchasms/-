@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo.entity.books;
 import com.example.demo.mapper.BookMapper;
 import com.example.demo.service.BookService;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BookServicelmpl implements BookService {
+public class BookServicelmpl extends ServiceImpl<BookMapper,books> implements BookService {
     @Autowired
     private BookMapper bookMapper;
     @Override
@@ -21,8 +22,8 @@ public class BookServicelmpl implements BookService {
     }
 
     @Override
-    public void insert(books books) {
-        bookMapper.insert(books);
+    public void insert(String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl) {
+        bookMapper.insert(bookName,author,category,press,sum,sumInw,isbn,price,bookUrl);
     }
 
     @Override
@@ -34,8 +35,8 @@ public class BookServicelmpl implements BookService {
     }
 
     @Override
-    public void deleteById(Integer id) {
-        bookMapper.deleteById(id);
+    public void deleteById(Integer bookId) {
+        bookMapper.deleteById(bookId);
     }
 
     @Override

@@ -1,33 +1,19 @@
 package com.example.demo.entity;
 
 public class books {
-    Integer book_id;
-    String book_name;
+    Integer bookId;
+    String bookName;
     String author;
     String category;
     String press;
     Integer sum;
-    Integer sum_inw;
+    Integer sumInw;
     String isbn;
     double price;
     double preferential;
-    String book_url;
+    String bookUrl;
 
-    public Integer getBook_id() {
-        return book_id;
-    }
 
-    public void setBook_id(Integer book_id) {
-        this.book_id = book_id;
-    }
-
-    public String getBook_name() {
-        return book_name;
-    }
-
-    public void setBook_name(String book_name) {
-        this.book_name = book_name;
-    }
 
     public String getAuthor() {
         return author;
@@ -61,13 +47,7 @@ public class books {
         this.sum = sum;
     }
 
-    public Integer getSum_inw() {
-        return sum_inw;
-    }
 
-    public void setSum_inw(Integer sum_inw) {
-        this.sum_inw = sum_inw;
-    }
 
     public String getIsbn() {
         return isbn;
@@ -93,28 +73,52 @@ public class books {
         this.preferential = preferential;
     }
 
-    public String getBook_url() {
-        return book_url;
+    public Integer getBookId() {
+        return bookId;
     }
 
-    public void setBook_url(String book_url) {
-        this.book_url = book_url;
+    public void setBookId(Integer bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public Integer getSumInw() {
+        return sumInw;
+    }
+
+    public void setSumInw(Integer sumInw) {
+        this.sumInw = sumInw;
+    }
+
+    public String getBookUrl() {
+        return bookUrl;
+    }
+
+    public void setBookUrl(String bookUrl) {
+        this.bookUrl = bookUrl;
     }
 
     @Override
     public String toString() {
         return "books{" +
-                "book_id=" + book_id +
-                ", book_name='" + book_name + '\'' +
+                "bookId=" + bookId +
+                ", bookName='" + bookName + '\'' +
                 ", author='" + author + '\'' +
                 ", category='" + category + '\'' +
                 ", press='" + press + '\'' +
                 ", sum=" + sum +
-                ", sum_inw=" + sum_inw +
+                ", sumInw=" + sumInw +
                 ", isbn='" + isbn + '\'' +
                 ", price=" + price +
                 ", preferential=" + preferential +
-                ", book_url='" + book_url + '\'' +
+                ", bookUrl='" + bookUrl + '\'' +
                 '}';
     }
 }

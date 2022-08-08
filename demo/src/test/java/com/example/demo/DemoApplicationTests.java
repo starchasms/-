@@ -2,6 +2,9 @@ package com.example.demo;
 
 import com.example.demo.controller.BookController;
 import com.example.demo.controller.UserController;
+import com.example.demo.entity.books;
+import com.example.demo.mapper.BookMapper;
+import com.example.demo.service.BookService;
 import com.example.demo.service.UserService;
 import com.example.demo.service.impl.BookServicelmpl;
 import org.junit.jupiter.api.Test;
@@ -12,10 +15,10 @@ import org.springframework.ui.ModelMap;
 @SpringBootTest
 class DemoApplicationTests {
     @Autowired
-    BookServicelmpl bookController=new BookServicelmpl();
+    BookMapper bookController;
     @Test
     void contextLoads() {
-        System.out.println(bookController.selectList());
+        bookController.insert("北纬" ,"陈丹燕","小说","浙江文艺出版社",1,1,"978753394648",39.0,"0");
     }
 
 
