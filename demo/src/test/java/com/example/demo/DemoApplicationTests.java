@@ -18,7 +18,7 @@ class DemoApplicationTests {
     BookMapper bookController;
     @Test
     void contextLoads() {
-        bookController.insert("北纬" ,"陈丹燕","小说","浙江文艺出版社",1,1,"978753394648",39.0,"0");
+        bookController.insert("北纬","陈丹燕","小说","浙江文艺出版社",1,1,"978753394648",39.0,"0");
     }
 
 
