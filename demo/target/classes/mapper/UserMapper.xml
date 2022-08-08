@@ -12,7 +12,7 @@
     </update>
     <select id="check" parameterType="com.example.demo.entity.User" resultType="com.example.demo.entity.User">
         select * from users
-        where user_name = ${user_name} and user_id = ${user_id} and sex = ${sex}
+        where user_name = ${userName} and user_id = ${userId} and sex = ${sex}
     </select>
     <select id="findAll" resultType="com.example.demo.entity.User">
         select * from users;
