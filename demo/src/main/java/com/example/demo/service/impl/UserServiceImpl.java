@@ -20,8 +20,8 @@ public class UserServiceImpl extends UserService {
     }
 
     @Override
-    public int addUser(User user){
-        int aFlag = userMapper.insertUser(user);
+    public int addUser(String userName,String sex,String phone,String  password,Integer state,Integer administratir){
+        int aFlag = userMapper.insertUser(userName,sex,phone,password,state,administratir);
         return aFlag;
     }
 
@@ -32,8 +32,8 @@ public class UserServiceImpl extends UserService {
     }
 
     @Override
-    public int modifyUser(User user){
-        int mFlag = userMapper.updateUser(user);
+    public int modifyUser(Integer userId,String state,String password){
+        int mFlag = userMapper.updateUser(userId,state,password);
         return mFlag;
     }
     @Override

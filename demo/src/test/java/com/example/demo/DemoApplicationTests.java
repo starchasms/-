@@ -20,10 +20,10 @@ class DemoApplicationTests {
 
 
     @Autowired
-    UserService userController;
+    UserController userController;
     @Test
     public void text(){
-        System.out.println(userController.queryAllUser());
+        System.out.println(userController.addUser("7","1","1","1",1,1));
     }
 
 

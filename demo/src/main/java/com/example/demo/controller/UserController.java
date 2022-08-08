@@ -21,14 +21,15 @@ public class UserController {
     UserService userService;
     private Integer userId;
 
+
 //    public UserController(Integer userId) {
 //        this.userId = userId;
 //    }
 
     //添加用户
     @RequestMapping("/addUser")
-    public Map addUser(User user){
-        int flag = userService.addUser(user);
+    public Map addUser(String userName,String sex,String phone,String  password,Integer state,Integer administratir){
+        int flag = userService.addUser(userName,sex,phone,password,state,administratir);
         Map<String,Object> map = new HashMap<String,Object>();
         if(flag == 1){
             map.put("msg","新增用户成功");
@@ -38,12 +39,11 @@ public class UserController {
             return map;
         }
     }
-
-    @RequestMapping(value = "/deleteUser+{user_id}")
-    public  String dropUser(@PathVariable("user_id")Integer user_id, ModelMap modelMap){
+    @ResponseBody
+    @RequestMapping(value = "/deleteUser")
+    public  String dropUser(Integer user_id){
         int flag = userService.dropUser(user_id);
-        List<User> userList = userService.queryAllUser();
-        modelMap.addAttribute("userList",userList);
+
         if(flag == 1){
             return "users";
         }else{
@@ -52,8 +52,8 @@ public class UserController {
     }
 
     @RequestMapping("/modifyUser")
-    public Map modifyUser(User user){
-        int flag = userService.modifyUser(user);
+    public Map modifyUser(Integer userId,String state,String password ){
+        int flag = userService.modifyUser(userId,state,password);
         Map<String,Object> map = new HashMap<>();
         if(flag == 1){
             map.put("msg","修改用户信息成功");
