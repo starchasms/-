@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@Controller
+// @Controller
+@RestController
 @RequestMapping("/books")
 public class BookController {
 
@@ -31,27 +34,36 @@ public class BookController {
     //   根据id 删除书籍
     @ResponseBody
     @RequestMapping(value = "/del")
-    public String deleteById(Integer id){ //PathVariable 表明它是前端传过来的一个参数
+    public Map<String, Object> deleteById(Integer id){ //PathVariable 表明它是前端传过来的一个参数
         bookServicelmpl.deleteById(id);
-        return "login";
+        Map<String,Object> map = new HashMap<>();
+        map.put("code",200);
+        map.put("message","删除成功");
+        return map;
     }
 
     @RequestMapping("/add")
-    public String add(String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl){
+    public Map<String, Object> add(String bookName, String author, String category, String press, Integer sum, Integer sumInw, String isbn, double price, String bookUrl){
+        System.err.println("null");
         bookServicelmpl.insert(bookName,author,category,press,sum,sumInw,isbn,price,bookUrl);
-        return "login";
+        Map<String,Object> map = new HashMap<>();
+        map.put("code",200);
+        map.put("message","添加成功");
+        return map;
     }
 
     @RequestMapping("selectbyisbn")
     public  List<books> selectbyisbn(String isbn){
         List<books> list=bookServicelmpl.selectbyisbn(isbn);
-
         return list;
     }
 
     @RequestMapping("/update")
-    public String update(String bookId,String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl){
+    public Map update(String bookId,String bookName,String author,String category,String press,Integer sum,Integer sumInw,String isbn,double price,String bookUrl){
         bookServicelmpl.update(bookId,bookName,author,category,press,sum,sumInw,isbn,price,bookUrl);
-        return "login";
+        Map<String,Object> map = new HashMap<>();
+        map.put("code",200);
+        map.put("message","更新陈宫");
+        return map;
     }
 }

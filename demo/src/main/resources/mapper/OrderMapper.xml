@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.OrderMapper">
-
+    <select id="selectall" resultType="com.example.demo.entity.Order">
+        SELECT `order`.* ,book_name,user_name FROM `order` JOIN books ON `order`.book_id=books.book_id JOIN users ON `order`.user_id=users.user_id
+    </select>
+    <delete id="deleteById">
+        DELETE FROM `order` WHERE id=${id}
+    </delete>
+    <select id="selectbyorderid" resultType="com.example.demo.entity.Order">
+        SELECT `order`.* ,book_name,user_name FROM `order` JOIN books ON `order`.book_id=books.book_id JOIN users ON `order`.user_id=users.user_id WHERE order_id=${orderid}
+    </select>
 </mapper>
